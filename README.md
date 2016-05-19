@@ -92,6 +92,11 @@ GitHub also supports Markdown editing with `README`'s. Normally, the filename is
 
 # Pull merge, push, and merge conflicts, what do they mean?
 
+
+#THIS IS AS FAR AS I'VE GOTTEN IN MY CHANGES SO FAR
+---
+
+
 Say you make a change to your local repository. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repository. It can be anything you want, and you can put whatever you'd like in it.
 
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-wowow-2.gif" alt="wowowowowwowowowowowowow"/></p>
