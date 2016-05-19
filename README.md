@@ -1,6 +1,7 @@
 #### Credit to [MasseyHacks](https://github.com/MasseyHacks/tutorials/tree/master/git-and-github) for the original and much of the current content.
 
 # What is Git and where do I get it?
+---
 
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team? And what happens if you need to roll back some of your code to an older version?
 
@@ -14,13 +15,15 @@ This workshop is not meant to be an all encompassing course on Git and GitHub. I
 
 ## What programs do we use
 
-1. You're going to need a GitHub account. Register one by visiting [github.com](https://github.com)
+1. You're going to need a GitHub account
+	- Register one by visiting [github.com](https://github.com)
 2. Get yourself a copy of GitHub Desktop: A friendly GUI version of a interfacing with your repository
-		- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
-			- Once you've downloaded it, be sure to run it and login using your GitHub account information
-		- Linux not supported, sorry. If you're a Linux user, chances are you're going to want to opt for a command line tool such as [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+	- [Download GitHub Desktop for Windows/OSX](https://desktop.github.com/)
+		- Once you've downloaded it, be sure to run it and login using your GitHub account information
+	- Linux not supported, sorry. If you're a Linux user, chances are you're going to want to opt for a command line tool such as [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 		
 # Creating a repository and what to do with it
+---
 
 We're going to go through the process of creating our first `hello-world` repository, and then talk about how we're going to use it, so let's get started.
 
@@ -46,17 +49,17 @@ We want our project files to be stored online on GitHub's servers, so everyone i
 So this means there's going to be a version of the repository files online (on GitHub's servers) and a version on your computer. You're going to be aiming to keep the two versions synchronized; when you make changes to some of the files locally, you're going to need to **commit** and push those changes to the online version. Likewise, if someone else in your group pushes changes to the server, you're going to want to pull those changes to your local version, so you can work with what your group members have added or changed.
 
 I really can't stress how important it is to understand this push/pull relationship between your local copy of the repository and the version that lives online, on GitHub's servers, so let's go over what these words mean again:
-		- Pushing is what happens when you commit your changes from your local copy of the repository up to the online server
-		- Pulling is what happens you retrieve (in GitHub Desktop, they also call it syncing) changes from the online server down to your local copy of the repository.
+	- Pushing is what happens when you commit your changes from your local copy of the repository up to the online server
+	- Pulling is what happens you retrieve (in GitHub Desktop, they also call it syncing) changes from the online server down to your local copy of the repository.
 		
 Push up, pull down, sounds simple enough right? We'll go over some of the problems you may encounter later, but for now let's get to cloning our repository and creating out local copy.
 
 - Desktop Users (Windows/Mac):
 	1. This step shouldn't be necessary if you logged in after first instaling the program, but in case something went wrong there, let's cover it here:
-		 - In the upper right hand corner of the program, click the ![](https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-gear.png) icon and go to "Options":
+		- In the upper right hand corner of the program, click the ![](https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-gear.png) icon and go to "Options":
 			<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-choose-options.png"/></p>
-		 -  Go to **Accounts** and click **Add account**
-		 -  Under **Log in** fill in your username and password for GitHub and click **Log in**
+		-  Go to **Accounts** and click **Add account**
+		-  Under **Log in** fill in your username and password for GitHub and click **Log in**
 	
 	2. Now that you're logged in, click the encircled **+** icon in the top left. This will open a menu that will allow to "Add" a pre-existing repository, "Create" a completely new repository, or "Clone" a repository that you have on github.com
 		<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-add-repo-menu.png"/></p>
@@ -91,11 +94,7 @@ When you were creating your `hello-world` repository, you opted for a `README` t
 GitHub also supports Markdown editing with `README`'s. Normally, the filename is `README.md`. If you don't know what Markdown is, don't worry. Just treat the `README` as a regular text file.
 
 # Pull merge, push, and merge conflicts, what do they mean?
-
-
-#THIS IS AS FAR AS I'VE GOTTEN IN MY CHANGES SO FAR
 ---
-
 
 Say you make a change to your local repository. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repository. It can be anything you want, and you can put whatever you'd like in it.
 
