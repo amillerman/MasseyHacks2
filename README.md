@@ -49,8 +49,9 @@ We want our project files to be stored online on GitHub's servers, so everyone i
 So this means there's going to be a version of the repository files online (on GitHub's servers) and a version on your computer. You're going to be aiming to keep the two versions synchronized; when you make changes to some of the files locally, you're going to need to **commit** and push those changes to the online version. Likewise, if someone else in your group pushes changes to the server, you're going to want to pull those changes to your local version, so you can work with what your group members have added or changed.
 
 I really can't stress how important it is to understand this push/pull relationship between your local copy of the repository and the version that lives online, on GitHub's servers, so let's go over what these words mean again:
-	- Pushing is what happens when you commit your changes from your local copy of the repository up to the online server
-	- Pulling is what happens you retrieve (in GitHub Desktop, they also call it syncing) changes from the online server down to your local copy of the repository.
+
+- Pushing is what happens when you commit your changes from your local copy of the repository up to the online server
+- Pulling is what happens you retrieve (in GitHub Desktop, they also call it syncing) changes from the online server down to your local copy of the repository.
 		
 Push up, pull down, sounds simple enough right? We'll go over some of the problems you may encounter later, but for now let's get to cloning our repository and creating out local copy.
 
