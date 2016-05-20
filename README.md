@@ -30,7 +30,7 @@ This workshop is not meant to be an all encompassing course on Git and GitHub. I
 
 We're going to go through the process of creating our first `hello-world` repository, and then talk about how we're going to use it, so let's get started.
 
-### Creating a Repository on GitHub
+## Creating a Repository on GitHub
 
 Let's get the online repository up and running first. Head over to your web browser go to [GitHub's Website](https://github.com).
 
@@ -43,7 +43,7 @@ Let's get the online repository up and running first. Head over to your web brow
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-new-repo-screen.png"/></p>
 
 
-### Cloning a Repository on GitHub Desktop
+## Cloning a Repository on GitHub Desktop
 
 Now that you have your online repository up and running, you've got to make a **local copy** of it by **cloning** it. Let's go over a brief rundown of what that means. 
 
@@ -59,7 +59,7 @@ I really can't stress how important it is to understand this push/pull relations
 Push up, pull down, sounds simple enough right? We'll go over some of the problems you may encounter later, but for now let's get to cloning our repository and creating out local copy.
 
 - Desktop Users (Windows/Mac):
-	1. This step shouldn't be necessary if you logged in after first instaling the program, but in case something went wrong there, let's cover it here:
+	1. This step shouldn't be necessary if you logged in after first installing the program, but in case something went wrong there, let's cover it here:
 		- In the upper right hand corner of the program, click the ![](https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-gear.png) icon and go to "Options":
 			<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-choose-options.png"/></p>
 		-  Go to **Accounts** and click **Add account**
@@ -97,25 +97,19 @@ When you were creating your `hello-world` repository, you opted for a `README` t
 
 GitHub also supports Markdown editing with `README`'s. Normally, the filename is `README.md`. If you don't know what Markdown is, don't worry. Just treat the `README` as a regular text file.
 
-# Pull merge, push, and merge conflicts, what do they mean?
+
+# How to create your first file and push it to the server
 ---
 
-Say you make a change to your local repository. Open up your favourite text editor (bonus points if it's Vim) and create a new text file in the repository. It can be anything you want, and you can put whatever you'd like in it.
+So now we have our repository cloned and ready to go on our computer. Let's try adding a file to the project and getting that file up to the server. 
+
+## Adding a file
+
+Open up any text editor you like (notepad, notepad++, vim, etc) and enter some sample text into the file. 
 
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-wowow-2.gif" alt="wowowowowwowowowowowowow"/></p>
 
-This new file is going to represent a change to your code project. Now, lets get this change from your local git repo to the online official GitHub repo.
-
-### Adding a File:
-
-Git doesn't recognise new files unless you want it to. First, you'll need to tell Git that the file has been changed.
-
-**Terminal users**: Use the command `git add` to add the file. There are lots of options to choose from:
-	- `git add <filename>`: Adds the given file and nothing else.
-	- `git add *`: Adds all the files in the current directory.
-	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
-
-**Desktop users**:  GitHub Desktop makes your job much easier by automatically detecting which files have been changed or added and providing you a graphical interface for chooising which ones you want to keep:
+Now here's the important part: save the file in your hello-world folder that the cloning generated. The reason being that GitHub Desktop is keeping track of any files and folders that get added, removed or changed in that folder. Once you've done that, you'll be able to see the file name in GitHub desktop in the list of changes.
 
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-changes-made.png"/></p>
 
@@ -123,31 +117,127 @@ Pressing the ![](https://github.com/MasseyHacks/tutorials/blob/master/git-and-gi
 
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-show-changes.png"/></p>
 
-### Committing a Change
+This is a bit different if you're using the terminal in Linux, so let's go over that too:
+- Use the command `git add` to add the file. There are lots of options to choose from:
+	- `git add <filename>`: Adds the given file and nothing else.
+	- `git add *`: Adds all the files in the current directory.
+	- `git add .`: Adds all the files in the current directory recursively. That means that, for a folder that is sitting within your directory, all the files and folders within that folder will be added too.
 
-Now you're going to have to tell Git that you'd like to officially record the changes in the repo. Whenever we tell git about the changes we've made to the project, we call it a commit. **You can add multiple changes in multiple files in just one commit** -- for example, I can create a hundred files in the directory and call a single commit. Git will figure it all out and list those hundred files as one change to the repo.
+## Committing the changes
 
-**Terminators**: committing is one simple command that you can run wherever in the directory. Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this change to the project. Trust me, you're going to want to describe your commits well.
+This is where the fun really starts, committing changes. This is the step just before it gets pushed up to the server. When you commit a change, it makes a record of that commit on your machine. It basically tells your local repository "Hey, I added this file, and here's why." You can even pick and choose which changes you want to commit by checking them off.
 
-**Desktopians**: In the main window, once you've chosen which files you want to include in the commit by checkmarking them in the list above, go to the lower panel and add a description and a summary, then press "Commit to master".
+Once you've chosen your files to be committed, and the message that will go with it - and trust me, you're going to want to make sure this message gives you an idea of what you changed - you'll press the commit to master button and presto! Now, where did they go...
 
 <p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-committing.png"</p>
 
-### PUSH!
+Well now that you've committed those files, you'll notice at the top right corner, under the sync button, we've got a new dot, and it's hollow too. That's your commit. If you click on it, you'll see the files you committed and the message you sent with it. The reason it's hollow is because it still hasn't made its way to the server, only your computer knows about it right now, so let's fix that.
 
-Now we're going to make the changes that you've made to your local git repo official, by pushing them to the official online GitHub repo. Under the hood, git tells GitHub about all of the commits that you've made on your local repo, and GitHub makes the same commits on the official repository. Even though you're pushing only one commit for now, keep in mind that **you can commit multiple times before a push**, and all of those commits will make it to the GitHub repo.
+For those of you who are using Linux, committing is one simple command that you can run anywhere in the directory. 
+- Call `git commit -m "<message>"`, where `<message>` is something to describe the changes that you've made in this commit
 
-**Termies**, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
+## Push!
 
-**Deskies**, pushing is really easy for GitHub Desktop. Just press the `Sync` button in the top-left corner of the "History" tab. It looks like this:
+We've got our commit primed and ready to be sent off to the server, so let's send it there. Press the Sync button to synchronize your local repository with the online GitHub one. As soon as it's completed, any hollow dots you created with commits will now become solid (Note the very last dot will never be solid because it represents the current state of your local repository). 
 
-<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-desktop-syncing.png"</p>
+Linux users, make the call `git push origin master`. From before, you should interpret this command as pushing everything at `master`, the local git repo, to `origin`, the online official GitHub repo. You'll have to provide your GitHub username and password for security.
 
-It should be noted that this doesn't just *push* your changes to GitHub, it also *pulls*. *Pulling* is the reverse of push: it takes whatever changes are on the GitHub repo and applies them to your local repo. This is useful when someone else makes changes to your repo on GitHub that you don't have, but more on that in a later section.
+And that's it, now it's up and live on the server! Congratulations! :tada: You've just made your first `add`, `commit`, and `push`! If you visit the link to the repository in github, you'll see your changes there.
 
-### Wowow, it's in the cloud!
+	
+# Pull merge, commit, push, and merge conflict: what do they mean?
+---
 
-Now, if you navigate back to the GitHub repo webpage, you'll be able to see the new file that you created, or any changes that you made to existing files. Congratulations!  :tada:  You've just made your first `add`, `commit`, and `push`!
+Now let's talk about that sync button, shall we? Remember when we were talking about pushing to the server and pulling from it? Well, this little button does it all at once for you. It's meant to try to make the process easier for you, by handling the flow of data in the right order. Pressing this Sync button is what you will use to push commits to the server, and what will pull changes down from the server. It keeps you synchronized with the server best it can every time you press it. And the best part is, it can take care of some of the problems that come with collaborating with other people on the same project.
+
+If you were working all by yourself on a project, you wouldn't likely run into any problems when it comes to pulling and pushing content, because the server only ever gets edited by you, but if you're working on this project with others, you're all going to be updating the server with new files and changes. So let's talk about what can happen in some of these situations, and how to solve some of the problems we'll encounter.
+
+## Merging
+
+So let's look at scenario. Within the directory, your friend in the group created a file `a.txt`, and you created a file `b.txt`. Your friend commits their changes and syncs their files to the server, away it goes! Beauty. Now you want to send your file to the server too. You make the commit, and press the sync button. But wait, the server has changed since the last time you synced with it; there's a new file in the project, `a.txt`. So the program has to first **pull and merge** the new files into the project, so that your repository is up to date. After it's done that, THEN your `b.txt` file will be sent off to the server, zoom! Now the server has both of those files, and you have them both on your computer to work with.
+
+Hang on though, your friend still only has their file on their computer though, not yours. They're going to have to press that sync button again after your file is done uploading, that way they're up to date now too.
+
+This is what merging is. It's what happens when you have to merge the servers repositories content with your local repositories content. Without it, you fall out of sync, and can't upload new changes.
+
+If you're using the terminal in Linux, you're going to have to do this pulling and merging yourself before pushing new content to the server. Let's look at what happens if you just try to commit and push your content before syncing up with the server.
+
+<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-must-pull.gif" /></p>
+
+The attempt to push `b.txt` will be rejected! Here's the rejection message:
+
+```
+To git@github.com:awolawol/hello-world.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:awolawol/hello-world.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+Basically this error message states that the your repo is behind the servers repo. You don't have all of the commits that the server repo has, as the your friend added a new one when pushing `a.txt`. Your repository had no idea this file existed until now, so now we're going to have to fix it.
+
+You must get all of those new commits from the online repo to you local repo. Do this by calling the command `git pull origin master`. This command will **pull** of the new commits from the online repo and **merge** them with your current repository. For now, the only merge is to add the new `a.txt` created by the first user.
+
+<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-pulling.gif" /></p>
+
+When calling `git pull`, you will be prompted with a Vim process to comment on what you've done in this merge and why you did it. If you're familiar with Vim, great! Say some words on what you've done. Otherwise, close Vim with `:q`, and the pull will finish. Near the end, after calling `ls`, you can see the `a.txt` appear in my directory.
+
+### Merge Conflicts
+
+The moment you've all been waiting for. What happens if two people are working on the same file at the same time, and commit one over the other? Welcome to merge conflicts.
+
+Let's say one person in the group edits the readme file, commits, and pushes first. They should be able to do so successfully. But, when the second person edits the file and tries to push his or her commits to the servers repository. It will be rejected, like in the last step, where we talked about merging. However, a simple `git pull`, for command line users, or `Sync`, for Desktop users, won't fix this problem.
+
+This will happen to command line users:
+
+<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-conflict-pull-2.gif" /></p>
+
+Desktop users: after clicking on the `Sync` button, the program should tell you that it cannot merge the changes.
+
+This specifically is called an **edit collision**: when two users change the same part of the same file, and GitHub doesn't know which edit to accept. How does git fix this? Git let's you decide.
+
+Read the error message from `git pull` carefully:
+
+```
+Enter passphrase for key '/home/jeffrey/.ssh/id_rsa': 
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:awolawol/hello-world
+ * branch            master     -> FETCH_HEAD
+   2aa6655..a60bbc9  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+The line `CONFLICT (content): Merge conflict in README.md` states the existence of the merge conflict, and that the `Automatic merge failed; fix conflicts and then commit the result`. In simple English, git is telling you that it tried to merge, but it couldn't, due to a conflict in `README.md`. Git then tells you to go and fix it yourself, and commit it afterwards.
+
+Well, how does the `README.md` look like right now? Open it up and see! Desktop users should start editing within the GUI. Terminal users will have to navigate to the file within the directory and edit it with their own tools. When you open `README.md`, you should see something like this:
+
+```
+# hello-world
+this is the repo description
+
+<<<<<<< HEAD
+this line was added to README.md by the second user but pushed after the last line was pushed, causing a merge conflict
+=======
+this line wase commited by the first user and pushed successfully.
+>>>>>>> a60bbc9b01a8d7cd9cea9c20986db983f4279982
+```
+
+See the `>>>>>>>` and the `<<<<<<<`? Those two markers section off a part of the file to denote where the merge conflict exists: right in the middle of it. There is a separating `=======` in the middle. Above the `=======`, you have the changes to the file that second user was trying to add. Under the `=======` are the changes that the first user made to the file before the second user committed.
+
+Git was kind enough to mark the merge conflict for us. Now, all that's left is to, as git told us, `fix conflicts and then commit the result`. So, using the conflict marks that git provides for you, manually go through the file and edit it to a final version that you want to be on the official repo.
+
+<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-conflict-fix.gif" /></p>
+
+The merge conflict should resolve, and your changes will push successfully, with this new file as the final file on the offical repo!
+
+If you don't want to deal with merge conflicts, just don't have multiple people working on the same file at the same time.
 
 ## Section 3: Rolling back the Repository to a Previous Commit
 
@@ -200,89 +290,6 @@ On your GitHub repo page, head over to `Settings`. You might have to type in you
 This is where you can add collaborators to a repo. A collaborator is a GitHub user that has read and write permissions on your repo -- that is, he or she is able to push their own changes to your repo. As such, they have complete control what goes on it. Go ahead and add your friend as a collaborator onto your account.
 
 Any collaborator can now add, commit, and push freely to the repo as much as he or she wishes! As long as they follow the steps from a couple of sections ago and clone it to a local repository.
-
-### Merging
-
-Let's see this in action. Within the directory, have one person in the pair create a file `a.txt`, and the other person create a file `b.txt`. Make sure that the user that is creating `b.txt` is using terminal git. If both people wihtin your pair use GitHub Desktop, it's fine to have a Desktop user create `b.txt`. Let the person who created `a.txt` add, commit, and push first. They should be able to do so without any trouble, and, if you refresh the repo webpage, you should be able to see `a.txt` within the list of files.
-
-Now, after `a.txt` is pushed to the respository, let the person with `b.txt` push his or her commits. However, if the second collaborator is using command line git:
-
-<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-must-pull.gif" /></p>
-
-The attempt to push `b.txt` will be rejected! Here's the rejection message:
-
-```
-To git@github.com:awolawol/hello-world.git
- ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'git@github.com:awolawol/hello-world.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes (e.g.
-hint: 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-```
-
-In simple English, this error message states that the problem git has is that the second user's repo is behind the actual official repo. He or she does not have all of the commits that the official repo has, as the first user added a new one when pushing `a.txt`. The second user's git repo has no knowledge of that commit, until now.
-
-In order to fix this error, the second user must get all of those new commits from the online official repo to their local repo. Do this by calling the command `git pull origin master`. This command will take all of the new commits from the offical online repo and **merge** them with your current repository. For now, the only merge is to add the new `a.txt` created by the first user.
-
-<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-pulling.gif" /></p>
-
-When calling `git pull`, you will be prompted with a Vim process to comment on what you've done in this merge and why you did it. If you're familiar with Vim, great! Say some words on what you've done. Otherwise, close Vim with `:q`, and the pull will finish. Near the end, after calling `ls`, you can see the `a.txt` appear in my directory.
-
-### Merge Conflicts
-
-Okay, this is pretty dangerous. Say if two people are both collaborators on one repository, and both of them edit the same file and push at the same time? Which change stays on the file? This is called a merge conflict.
-
-Let's see what happens by purposefully creating one! Have both people in your pair edit README.txt at the same time. Let one person add, commit, and push first. They should be able to do so successfully. But, when the second person tries to push his or her commits to the official repository, it will be rejected, like in the last step, where we talked about merging. However, a simple `git pull`, for command line users, or `Sync`, for Desktop users, won't fix this problem.
-
-This will happen to command line users:
-
-<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-conflict-pull-2.gif" /></p>
-
-Desktop users: after clicking on the `Sync` button, the program should tell you that it cannot merge the changes.
-
-This specifically is called an **edit collision**: when two users change the same part of the same file, and GitHub doesn't know which edit to accept. How does git fix this? Git let's you decide.
-
-Read the error message from `git pull` carefully:
-
-```
-Enter passphrase for key '/home/jeffrey/.ssh/id_rsa': 
-remote: Counting objects: 3, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From github.com:awolawol/hello-world
- * branch            master     -> FETCH_HEAD
-   2aa6655..a60bbc9  master     -> origin/master
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-The line `CONFLICT (content): Merge conflict in README.md` states the existence of the merge conflict, and that the `Automatic merge failed; fix conflicts and then commit the result`. In simple English, git is telling you that it tried to merge, but it couldn't, due to a conflict in `README.md`. Git then tells you to go and fix it yourself, and commit it afterwards.
-
-Well, how does the `README.md` look like right now? Open it up and see! Desktop users should start editing within the GUI. Terminal users will have to navigate to the file within the directory and edit it with their own tools. When you open `README.md`, you should see something like this:
-
-```
-# hello-world
-this is the repo description
-
-<<<<<<< HEAD
-this line was added to README.md by the second user but pushed after the last line was pushed, causing a merge conflict
-=======
-this line wase commited by the first user and pushed successfully.
->>>>>>> a60bbc9b01a8d7cd9cea9c20986db983f4279982
-```
-
-See the `>>>>>>>` and the `<<<<<<<`? Those two markers section off a part of the file to denote where the merge conflict exists: right in the middle of it. There is a separating `=======` in the middle. Above the `=======`, you have the changes to the file that second user was trying to add. Under the `=======` are the changes that the first user made to the file before the second user committed.
-
-Git was kind enough to mark the merge conflict for us. Now, all that's left is to, as git told us, `fix conflicts and then commit the result`. So, using the conflict marks that git provides for you, manually go through the file and edit it to a final version that you want to be on the official repo.
-
-<p align="center"><img src="https://github.com/MasseyHacks/tutorials/blob/master/git-and-github/resources/github-conflict-fix.gif" /></p>
-
-The merge conflict should resolve, and your changes will push successfully, with this new file as the final file on the offical repo!
-
-If you don't want to deal with merge conflicts, just don't have multiple people working on the same file at the same time.
 
 ## Section 5: That's it!
 
