@@ -1,10 +1,7 @@
-Conflicts suck so bad
-
-
 #### Credit to [MasseyHacks](https://github.com/MasseyHacks/tutorials/tree/master/git-and-github) for the original and much of the current content.
 
 # What is Git and where do I get it?
----
+
 
 Have you ever thought about programming on a team? How will you all work on the same code without messing each other up? How will you keep the same code updated amongst everyone on the team? And what happens if you need to roll back some of your code to an older version?
 
@@ -26,7 +23,7 @@ This workshop is not meant to be an all encompassing course on Git and GitHub. I
 	- Linux not supported, sorry. If you're a Linux user, chances are you're going to want to opt for a command line tool such as [Git SCM](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 		
 # Creating a repository and what to do with it
----
+
 
 We're going to go through the process of creating our first `hello-world` repository, and then talk about how we're going to use it, so let's get started.
 
@@ -99,7 +96,7 @@ GitHub also supports Markdown editing with `README`'s. Normally, the filename is
 
 
 # How to create your first file and push it to the server
----
+
 
 So now we have our repository cloned and ready to go on our computer. Let's try adding a file to the project and getting that file up to the server. 
 
@@ -146,7 +143,7 @@ And that's it, now it's up and live on the server! Congratulations! :tada: You'v
 
 	
 # Pull merge, commit, push, and merge conflict: what do they mean?
----
+
 
 Now let's talk about that sync button, shall we? Remember when we were talking about pushing to the server and pulling from it? Well, this little button does it all at once for you. It's meant to try to make the process easier for you, by handling the flow of data in the right order. Pressing this Sync button is what you will use to push commits to the server, and what will pull changes down from the server. It keeps you synchronized with the server best it can every time you press it. And the best part is, it can take care of some of the problems that come with collaborating with other people on the same project.
 
