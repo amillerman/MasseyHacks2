@@ -1,3 +1,6 @@
+Conflicts suck so bad
+
+
 #### Credit to [MasseyHacks](https://github.com/MasseyHacks/tutorials/tree/master/git-and-github) for the original and much of the current content.
 
 # What is Git and where do I get it?
