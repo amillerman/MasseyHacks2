@@ -1,5 +1,7 @@
 #### Credit to [MasseyHacks](https://github.com/MasseyHacks/tutorials/tree/master/git-and-github) for the original and much of the current content.
 
+###This is an awesome change for everyone!!
+
 # What is Git and where do I get it?
 
 
